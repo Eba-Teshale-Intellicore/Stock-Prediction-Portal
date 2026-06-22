@@ -3,6 +3,7 @@
 import ThemeToggle from "./ThemeToggle";
 import useLanguage from "../src/hooks/useLanguage";
 import { translations } from "../src/lib/lang";
+import Button from "./Button";
 
 export default function Header() {
   const { lang, toggleLang } = useLanguage();
@@ -17,12 +18,8 @@ export default function Header() {
         </div>
 
         <div className="thicolumn">
-          <a href="">
-            <button>Login</button>
-          </a>
-          <a href="">
-            <button>Register</button>
-          </a>
+          <Button text="Login" class="Login" />
+          <Button text="Register" class="Register" />
         </div>
       </nav>
     </header>
