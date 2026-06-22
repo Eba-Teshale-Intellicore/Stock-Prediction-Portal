@@ -1,0 +1,28 @@
+.container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .main {
+    background: rgb(255, 232, 232);
+    padding: 4rem 8rem;
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    width: 30rem;
+  }
+  button {
+    margin-top: 1rem;
+  }
+}

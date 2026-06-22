@@ -1,0 +1,35 @@
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+button {
+  background: var(--button);
+  color: black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+header {
+  margin: 0;
+  padding: 0.3rem 3rem;
+  border-bottom: 1px black solid;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  .seccolumn,
+  .thicolumn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
