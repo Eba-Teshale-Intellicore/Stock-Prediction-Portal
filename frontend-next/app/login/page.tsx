@@ -1,5 +1,10 @@
 import React from "react";
+import Login from "@/component/Login";
 
-export default function Login() {
-  return <h1>Login Page</h1>;
+export default function LoginPage() {
+  return (
+    <>
+      <Login />
+    </>
+  );
 }

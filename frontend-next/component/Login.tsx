@@ -4,7 +4,7 @@ import styles from "./login.module.scss";
 import axios from "axios";
 // import { useRouter } from "next/navigation";
 
-export default function RegisterPage() {
+export default function Login() {
   // const router = useRouter();
 
   const [form, setForm] = useState({
