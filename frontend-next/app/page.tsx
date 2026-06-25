@@ -9,7 +9,6 @@ export default function Home() {
 
   return (
     <main>
-      {/* <h1>{translations[lang].title}</h1> */}
       <Main />
     </main>
   );

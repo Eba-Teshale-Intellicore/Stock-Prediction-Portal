@@ -6,10 +6,13 @@ import { translations } from "../src/lib/lang";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useContext } from "react";
+import { AuthContext } from "@/app/AuthProvider";
 
 export default function Header() {
   const router = useRouter();
   const { lang, toggleLang } = useLanguage();
+  const { isLoggedIn, setIsLoggenIn } = useContext(AuthContext);
 
   return (
     <header>
@@ -26,17 +29,23 @@ export default function Header() {
         </div>
 
         <div className="thicolumn">
-          <Button
-            text="Login"
-            class="Login"
-            onClick={() => router.push("/login")}
-          />
+          {isLoggedIn ? (
+            <span>Logout</span>
+          ) : (
+            <>
+              <Button
+                text="Login"
+                class="Login"
+                onClick={() => router.push("/login")}
+              />
 
-          <Button
-            text="Register"
-            class="Register"
-            onClick={() => router.push("/register")}
-          />
+              <Button
+                text="Register"
+                class="Register"
+                onClick={() => router.push("/register")}
+              />
+            </>
+          )}
         </div>
       </nav>
     </header>
