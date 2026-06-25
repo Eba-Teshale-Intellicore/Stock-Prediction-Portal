@@ -2,7 +2,7 @@
 
 import ThemeToggle from "./ThemeToggle";
 import useLanguage from "../src/hooks/useLanguage";
-import { translations } from "../src/lib/lang";
+import { translations } from "@/src/lib/lang";
 import Button from "./Button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
