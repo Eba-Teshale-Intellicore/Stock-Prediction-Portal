@@ -47,7 +47,6 @@ export default function Login() {
     } catch (error) {
       setError("Invalid username or password");
       setSuccess(false);
-      console.error(error.response?.data);
     } finally {
       setLoading(false);
     }

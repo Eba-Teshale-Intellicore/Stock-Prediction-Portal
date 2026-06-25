@@ -44,10 +44,13 @@ export default function Register() {
       setErrors({});
       setSuccess(true);
       router.push("/login");
-    } catch (error) {
-      setErrors(error.response.data);
-      console.log("FULL ERROR:", error.response?.data);
-      console.log("not found");
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        setErrors(error.response?.data);
+        console.log("FULL ERROR:", error.response?.data);
+      } else {
+        console.log("Unknown error:", error);
+      }
     } finally {
       setLoading(false);
     }
