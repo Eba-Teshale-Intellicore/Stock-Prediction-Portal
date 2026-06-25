@@ -22,9 +22,13 @@ const Dashboard = () => {
         );
 
         console.log("Success:", res.data);
-      } catch (error) {
-        console.log("ERROR RESPONSE:", error.response?.data);
-        console.log("STATUS:", error.response?.status);
+      } catch (error: unknown) {
+        if (axios.isAxiosError(error)) {
+          console.log("ERROR RESPONSE:", error.response?.data);
+          console.log("STATUS:", error.response?.status);
+        } else {
+          console.log("Unknown error:", error);
+        }
       }
     };
 
