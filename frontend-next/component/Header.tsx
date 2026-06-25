@@ -40,12 +40,12 @@ export default function Header() {
             <>
               <Button
                 text="Dashboard"
-                class="dash"
+                className="dash"
                 onClick={() => router.push("/dashboard")}
               ></Button>
               <Button
                 text="Logout"
-                class="Logout"
+                className="Logout"
                 onClick={handleLogout}
               ></Button>
             </>
@@ -53,13 +53,13 @@ export default function Header() {
             <>
               <Button
                 text="Login"
-                class="Login"
+                className="Login"
                 onClick={() => router.push("/login")}
               />
 
               <Button
                 text="Register"
-                class="Register"
+                className="Register"
                 onClick={() => router.push("/register")}
               />
             </>
