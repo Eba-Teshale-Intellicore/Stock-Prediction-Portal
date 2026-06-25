@@ -12,12 +12,12 @@ import { AuthContext } from "@/app/AuthProvider";
 export default function Header() {
   const router = useRouter();
   const { lang, toggleLang } = useLanguage();
-  const { isLoggedIn, setIsLoggenIn } = useContext(AuthContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
-    setIsLoggenIn(false);
+    setIsLoggedIn(false);
     router.push("/login");
   };
 

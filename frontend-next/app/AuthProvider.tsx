@@ -1,21 +1,20 @@
 "use client";
 
-import { useState, createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 
-//  create Context
-const AuthContext = createContext();
+export const AuthContext = createContext(null);
 
-const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggenIn] = useState(
-    !!localStorage.getItem("accessToken"),
-  );
+export default function AuthProvider({ children }) {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!token);
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggenIn }}>
+    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       {children}
     </AuthContext.Provider>
   );
-};
-
-export default AuthProvider;
-export { AuthContext };
+}

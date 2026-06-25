@@ -16,7 +16,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { isLoggedIn, setIsLoggenIn } = useContext(AuthContext);
+  const { setIsLoggedIn } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ export default function Login() {
 
       // console.log("res.data =>", res.data);
       console.log("Login Successful");
-      setIsLoggenIn(true);
+      setIsLoggedIn(true);
       setError("");
       setSuccess(true);
       setTimeout(() => {
