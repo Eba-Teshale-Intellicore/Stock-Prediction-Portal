@@ -12,7 +12,12 @@ export default function Register() {
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState({});
+  type Errors = {
+    username?: string[];
+    email?: string[];
+    password?: string[];
+  };
+  const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -88,7 +93,7 @@ export default function Register() {
             onChange={(e) => setForm({ ...form, username: e.target.value })}
             value={form.username}
           />
-          <small>{errors.username}</small>
+          <small>{errors.username?.[0]}</small>
 
           <input
             type="email"
@@ -98,7 +103,7 @@ export default function Register() {
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             value={form.email}
           />
-          <small>{errors.email}</small>
+          <small>{errors.email?.[0]}</small>
 
           <input
             type="password"
@@ -108,7 +113,9 @@ export default function Register() {
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             value={form.password}
           />
-          <small>{errors.password}</small>
+          {/* <small>{errors.password}</small> */}
+          <small>{errors.password?.[0]}</small>
+
           {success && <small>Registration Successful</small>}
           {loading ? (
             <button type="submit" className={styles.button} disabled>
