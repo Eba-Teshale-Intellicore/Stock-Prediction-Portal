@@ -3,6 +3,8 @@ import { useState } from "react";
 import styles from "./login.module.scss";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
+import { AuthContext } from "@/app/AuthProvider";
 
 export default function Login() {
   const router = useRouter();
@@ -14,6 +16,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+  const { isLoggedIn, setIsLoggenIn } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -35,7 +38,7 @@ export default function Login() {
 
       // console.log("res.data =>", res.data);
       console.log("Login Successful");
-      seIsLoggenIn(true);
+      setIsLoggenIn(true);
       setError("");
       setSuccess(true);
       setTimeout(() => {

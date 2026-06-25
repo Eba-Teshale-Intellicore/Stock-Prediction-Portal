@@ -2,10 +2,10 @@
 import { useState } from "react";
 import styles from "./register.module.scss";
 import axios from "axios";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
-  // const router = useRouter();
+  const router = useRouter();
 
   const [form, setForm] = useState({
     username: "",
@@ -43,6 +43,7 @@ export default function Register() {
       console.log("registration Successful");
       setErrors({});
       setSuccess(true);
+      router.push("/login");
     } catch (error) {
       setErrors(error.response.data);
       console.log("FULL ERROR:", error.response?.data);

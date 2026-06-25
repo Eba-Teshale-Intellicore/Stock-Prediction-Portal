@@ -14,6 +14,13 @@ export default function Header() {
   const { lang, toggleLang } = useLanguage();
   const { isLoggedIn, setIsLoggenIn } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    setIsLoggenIn(false);
+    router.push("/login");
+  };
+
   return (
     <header>
       <nav>
@@ -30,9 +37,11 @@ export default function Header() {
 
         <div className="thicolumn">
           {isLoggedIn ? (
-            <Button>
-              <span>Logout</span>
-            </Button>
+            <Button
+              text="Logout"
+              class="Logout"
+              onClick={handleLogout}
+            ></Button>
           ) : (
             <>
               <Button
