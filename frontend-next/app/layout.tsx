@@ -1,8 +1,9 @@
+"use client";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../src/css/home.default.scss";
-import Header from "@/component/header";
+import Header from "@/component/Header";
 import Footer from "@/component/Footer";
 import AuthProvider from "./AuthProvider";
 
