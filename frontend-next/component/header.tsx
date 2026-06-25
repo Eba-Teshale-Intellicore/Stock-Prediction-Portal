@@ -30,7 +30,9 @@ export default function Header() {
 
         <div className="thicolumn">
           {isLoggedIn ? (
-            <span>Logout</span>
+            <Button>
+              <span>Logout</span>
+            </Button>
           ) : (
             <>
               <Button
