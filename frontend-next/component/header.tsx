@@ -37,11 +37,18 @@ export default function Header() {
 
         <div className="thicolumn">
           {isLoggedIn ? (
-            <Button
-              text="Logout"
-              class="Logout"
-              onClick={handleLogout}
-            ></Button>
+            <>
+              <Button
+                text="Dashboard"
+                class="dash"
+                onClick={() => router.push("/dashboard")}
+              ></Button>
+              <Button
+                text="Logout"
+                class="Logout"
+                onClick={handleLogout}
+              ></Button>
+            </>
           ) : (
             <>
               <Button

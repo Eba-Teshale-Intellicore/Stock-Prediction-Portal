@@ -8,5 +8,6 @@ urlpatterns = [
   path('register/', 
        UserViews.RegisterView.as_view(),
        name="register"),
+  path('protected-view/', UserViews.ProtectedView.as_view(), name='protected'),
   ]
 
