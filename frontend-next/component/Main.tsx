@@ -13,7 +13,7 @@ export default function Main() {
 
         <p>AI-powered stock market analysis and prediction platform.</p>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.....</p>
 
         <Button text="Explore Now " onClick={() => router.push("/dashboard")} />
       </div>
