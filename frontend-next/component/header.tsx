@@ -24,7 +24,6 @@ export default function Header() {
   return (
     <header>
       <nav>
-        {/* LOGO → HOME */}
         <Link href="/" className="logo">
           Stock Prediction Portal
         </Link>
