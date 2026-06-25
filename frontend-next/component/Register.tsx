@@ -20,7 +20,7 @@ export default function Register() {
   //   e.preventDefault();
   //   alert("test");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 

@@ -18,7 +18,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const { setIsLoggedIn } = useContext(AuthContext);
 
-  const handleLogin = async (e) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
